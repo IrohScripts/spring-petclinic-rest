@@ -1,12 +1,14 @@
-CREATE DATABASE IF NOT EXISTS petclinic;
+CREATE DATABASE IF NOT EXISTS petclinic_db;
 
-ALTER DATABASE petclinic
+ALTER DATABASE petclinic_db
   DEFAULT CHARACTER SET utf8
   DEFAULT COLLATE utf8_general_ci;
 
-GRANT ALL PRIVILEGES ON petclinic.* TO pc@localhost IDENTIFIED BY 'pc';
+-- Following lines were causing me trouble, i thinks its a "run it once" type thing idk 
+-- CREATE USER 'pc'@'localhost' IDENTIFIED BY 'pc';
+-- GRANT ALL PRIVILEGES ON petclinic_db.* TO 'pc'@'localhost';
 
-USE petclinic;
+USE petclinic_db;
 
 CREATE TABLE IF NOT EXISTS vets (
   id INT(4) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
